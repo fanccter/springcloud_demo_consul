@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+    <contextName>logback</contextName>
+    <include resource="log/base-spring.xml"/>
+
+    <!--默认日志路径配置为打包时选用的/logs目录, mac新版本不开放根目录权限, 开发时请自行修改日志路径 -->
+    <!-- 生产配置, 不输出日志到控制台-->
+<!--    <property name="BASE_LOG_PATH" value="C:/mygithub/springcloud_demo_consul/logs/"/>-->
+<!--    <include resource="log/prod-spring.xml"/>-->
+
+    <!-- 本机测试配置-->
+    <include resource="log/defaults-spring.xml"/>
+</configuration>

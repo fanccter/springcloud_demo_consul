@@ -1,0 +1,24 @@
+###################### server info #####################
+server:
+  port: 1001
+  ssl:
+    enabled: false
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  application:
+    name: springcloud-demo
+  ###################### consul ###########################
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckUrl: http://localhost:${server.port}/health
+        healthCheckInterval: 15s
+        instance-id: springcloud-demo:${random.value}
+        hostname: agent
+        enabled: true
+        heartbeat:
+          enabled: true
