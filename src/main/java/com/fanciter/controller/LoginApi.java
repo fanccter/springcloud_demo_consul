@@ -16,7 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
-@Api(tags = "行内数据服务")
+@Api(tags = "测试服务")
 @Slf4j
 @RestController
 @RequestMapping("/api/v1")
