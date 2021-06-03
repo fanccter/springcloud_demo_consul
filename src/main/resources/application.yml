@@ -3,14 +3,18 @@ server:
 spring:
   application:
     name: springboot_demo
-  thymeleaf:
-    cache: false
+master:
   datasource:
-    name: test
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
+second:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml

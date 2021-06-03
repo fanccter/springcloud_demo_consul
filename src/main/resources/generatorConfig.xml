@@ -21,9 +21,9 @@
         <!--jdbc的数据库连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://172.18.1.5:3306/test?allowMultiQueries=true"
+                connectionURL="jdbc:mysql://localhost:3306/test2?allowMultiQueries=true"
                 userId="root"
-                password="1017~Fulin">
+                password="root">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -31,7 +31,7 @@
         </javaTypeResolver>
 
 
-        <javaModelGenerator targetPackage="com.fanciter.data.db.domain" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.fanciter.data.db.domain.second" targetProject="./src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对model添加 构造函数 -->
@@ -44,15 +44,15 @@
 
         <!--mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
         <!--<sqlMapGenerator targetPackage="mappers" targetProject=".\src\main\resources">-->
-        <sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="mapper.second" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.fanciter.data.db.mapper" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.fanciter.data.db.mapper.second" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
-        <table tableName="user" domainObjectName="User" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="test_g" domainObjectName="Testg" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
 
     </context>
 </generatorConfiguration>
