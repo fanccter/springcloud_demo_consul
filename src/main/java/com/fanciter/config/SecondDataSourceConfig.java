@@ -24,23 +24,23 @@ public class SecondDataSourceConfig {
     static final String PACKAGE = "com.fanciter.data.db.mapper.second";
     static final String MAPPER_LOCATION = "classpath:mapper/second/*.xml";
 
-    @Value("${second.datasource.url}")
-    private String url;
+    @Value("${spring.datasource.testdata.secondUrl}")
+    private String secondUrl;
 
-    @Value("${second.datasource.username}")
+    @Value("${spring.datasource.testdata.username}")
     private String user;
 
-    @Value("${second.datasource.password}")
+    @Value("${spring.datasource.testdata.password}")
     private String password;
 
-    @Value("${second.datasource.driverClassName}")
+    @Value("${spring.datasource.testdata.driverClassName}")
     private String driverClass;
 
     @Bean(name = "secondDataSource")
     public DataSource clusterDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
-        dataSource.setUrl(url);
+        dataSource.setUrl(secondUrl);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
         return dataSource;

@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fanciter.data.db.domain.master.User;
 import com.fanciter.request.UserRequest;
 import com.fanciter.service.UserService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
-@Api(tags = "测试服务")
 @Slf4j
 @RestController
 @RequestMapping("/api/v1")
@@ -26,7 +23,6 @@ public class LoginApi {
     UserService userService;
 
     @PostMapping("/login")
-    @ApiOperation("登录")
     @ResponseBody
     public String login(@RequestBody @Validated UserRequest request) {
         //log.info("登录-login, {}", request);
@@ -40,7 +36,6 @@ public class LoginApi {
 
 
     @PostMapping("/multiTest")
-    @ApiOperation("多数据测试")
     @ResponseBody
     public Map multiTest(@RequestBody @Validated UserRequest request) {
         //log.info("登录-login, {}", request);

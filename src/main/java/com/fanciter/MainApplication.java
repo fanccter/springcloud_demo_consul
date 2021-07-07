@@ -6,13 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import com.fanciter.server.graphql.util.GraphQLServerMain;
 
 @EnableTransactionManagement
 @EnableFeignClients(basePackages = {"com.fanciter"})
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class MainApplication {
+@MapperScan(basePackages = {"com.fanciter.data.db.mapper"})
+public class MainApplication extends GraphQLServerMain {
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class);
+        SpringApplication.run(GraphQLServerMain.class);
     }
 }

@@ -1,0 +1,21 @@
+scalar Date
+
+schema {
+    query: QueryType
+}
+
+type QueryType {
+    test_f(name:String!):[test_f]
+    test_g(name:String!):[test_g]
+}
+type test_f {
+    id: String!
+    name: String
+    age: String
+}
+
+type test_g {
+    id: String!
+    name: String
+    age: String
+}

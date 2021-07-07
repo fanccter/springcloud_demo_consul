@@ -1,20 +1,31 @@
 server:
   port: 1001
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
-    name: springboot_demo
-master:
+    name: springcloud_demo
   datasource:
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    username: root
-    password: root
-    driverClassName: com.mysql.jdbc.Driver
-second:
-  datasource:
-    url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    username: root
-    password: root
-    driverClassName: com.mysql.jdbc.Driver
+    testdata:
+      username: fulin
+      password : fulin~Fulin
+      masterUrl: jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      secondUrl: jdbc:mysql://localhost:3306/test2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+
+
+#master:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+#    username: root
+#    password: root
+#    driverClassName: com.mysql.jdbc.Driver
+#second:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+#    username: root
+#    password: root
+#    driverClassName: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml

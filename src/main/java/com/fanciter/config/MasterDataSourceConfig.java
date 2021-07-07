@@ -25,16 +25,16 @@ public class MasterDataSourceConfig {
     static final String PACKAGE = "com.fanciter.data.db.mapper.master";
     static final String MAPPER_LOCATION = "classpath:mapper/master/*.xml";
 
-    @Value("${master.datasource.url}")
-    private String url;
+    @Value("${spring.datasource.testdata.masterUrl}")
+    private String masterUrl;
 
-    @Value("${master.datasource.username}")
+    @Value("${spring.datasource.testdata.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("${spring.datasource.testdata.password}")
     private String password;
 
-    @Value("${master.datasource.driverClassName}")
+    @Value("${spring.datasource.testdata.driverClassName}")
     private String driverClass;
 
     @Bean(name = "masterDataSource")
@@ -42,7 +42,7 @@ public class MasterDataSourceConfig {
     public DataSource masterDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
-        dataSource.setUrl(url);
+        dataSource.setUrl(masterUrl);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
         return dataSource;
