@@ -10,11 +10,9 @@ import com.fanciter.data.db.domain.master.Testf;
 import com.fanciter.data.db.domain.master.TestfExample;
 import com.fanciter.data.db.domain.master.User;
 import com.fanciter.data.db.domain.master.UserExample;
-import com.fanciter.data.db.domain.second.Testg;
-import com.fanciter.data.db.domain.second.TestgExample;
 import com.fanciter.data.db.mapper.master.TestfMapper;
 import com.fanciter.data.db.mapper.master.UserMapper;
-import com.fanciter.data.db.mapper.second.TestgMapper;
+import com.fanciter.data.db.mapper.second.EsGjjInfoMapper;
 import com.fanciter.util.PwdMd5Util;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,7 +30,7 @@ public class UserService {
     private TestfMapper testfMapper;
 
     @Autowired
-    private TestgMapper testgMapper;
+    private EsGjjInfoMapper esGjjInfoMapper;
 
     public List<User> loginIn(String name, String password) {
         log.info("info 登录");
@@ -52,11 +50,9 @@ public class UserService {
         log.info("test_f:" + JSON.toJSONString(testfs));
         result.put("test_f", testfs);
 
-        TestgExample example2 = new TestgExample();
-        example2.createCriteria().andIdEqualTo(1);
-        List<Testg> testgs = testgMapper.selectByExample(example2);
-        log.info("test_g:" + JSON.toJSONString(testgs));
-        result.put("test_g", testgs);
+        int total = esGjjInfoMapper.count();
+        log.info("test_g:" + total);
+        result.put("test_g", total);
         return result;
     }
 }
